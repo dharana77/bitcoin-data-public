@@ -1,0 +1,72 @@
+[2025-02-07T22:00:02.056+0900] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-07T22:00:02.061+0900] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: run_four_python_files.run_bronze scheduled__2025-02-07T12:45:00+00:00 [queued]>
+[2025-02-07T22:00:02.064+0900] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: run_four_python_files.run_bronze scheduled__2025-02-07T12:45:00+00:00 [queued]>
+[2025-02-07T22:00:02.064+0900] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-02-07T22:00:02.069+0900] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): run_bronze> on 2025-02-07 12:45:00+00:00
+[2025-02-07T22:00:02.075+0900] {logging_mixin.py:190} WARNING - /Users/jingyounglee/miniforge3/envs/bitcoin/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=30955) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-07T22:00:02.076+0900] {standard_task_runner.py:72} INFO - Started process 30957 to run task
+[2025-02-07T22:00:02.075+0900] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'run_four_python_files', 'run_bronze', 'scheduled__2025-02-07T12:45:00+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/run_four_files.py', '--cfg-path', '/var/folders/sp/pflbc_w93l76v3kjctmz_4tw0000gn/T/tmpdnfyd38j']
+[2025-02-07T22:00:02.076+0900] {standard_task_runner.py:105} INFO - Job 59: Subtask run_bronze
+[2025-02-07T22:00:02.096+0900] {task_command.py:467} INFO - Running <TaskInstance: run_four_python_files.run_bronze scheduled__2025-02-07T12:45:00+00:00 [running]> on host macbook-pro-3.local
+[2025-02-07T22:00:02.125+0900] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='run_four_python_files' AIRFLOW_CTX_TASK_ID='run_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-02-07T12:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-07T12:45:00+00:00'
+[2025-02-07T22:00:02.125+0900] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-07T22:00:02.136+0900] {subprocess.py:78} INFO - Tmp dir root location: /var/folders/sp/pflbc_w93l76v3kjctmz_4tw0000gn/T
+[2025-02-07T22:00:02.136+0900] {subprocess.py:88} INFO - Running command: ['/bin/bash', '-c', 'python bronze/raw_data2.py']
+[2025-02-07T22:00:02.140+0900] {subprocess.py:99} INFO - Output:
+[2025-02-07T22:00:02.734+0900] {subprocess.py:106} INFO - /Users/jingyounglee/Desktop/bitcoin-data/bronze/raw_data2.py:18: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2025-02-07T22:00:02.734+0900] {subprocess.py:106} INFO -   now = datetime.utcnow()
+[2025-02-07T22:00:11.524+0900] {subprocess.py:106} INFO - BTC_USDT_15m.csv 파일이 존재합니다. 마지막 기록 시각: 2025-02-07 12:30:00
+[2025-02-07T22:00:11.527+0900] {subprocess.py:106} INFO - 
+[2025-02-07T22:00:11.528+0900] {subprocess.py:106} INFO - === 15m 데이터 수집 시작 (시작 시각: 2025-02-07 12:30:00.001000) ===
+[2025-02-07T22:00:11.530+0900] {subprocess.py:106} INFO - [[1738932300000, 97975.5, 98085.85, 97868.76, 97963.58, 213.34435], [1738933200000, 97963.58, 97990.24, 97963.58, 97990.24, 1.35278]]
+[2025-02-07T22:00:11.531+0900] {subprocess.py:106} INFO - []
+[2025-02-07T22:00:11.531+0900] {subprocess.py:106} INFO - 더 이상 반환되는 데이터가 없습니다.
+[2025-02-07T22:00:11.532+0900] {subprocess.py:106} INFO - 15m CSV 파일에 새로운 데이터가 추가되었습니다: BTC_USDT_15m.csv
+[2025-02-07T22:00:11.533+0900] {subprocess.py:106} INFO - 로드한 15m 데이터의 앞부분:
+[2025-02-07T22:00:11.534+0900] {subprocess.py:106} INFO -                          open      high       low     close     volume
+[2025-02-07T22:00:11.535+0900] {subprocess.py:106} INFO - datetime
+[2025-02-07T22:00:11.536+0900] {subprocess.py:106} INFO - 2025-02-07 12:15:00  97630.43  97787.52  97500.00  97677.44  229.45935
+[2025-02-07T22:00:11.537+0900] {subprocess.py:106} INFO - 2025-02-07 12:30:00  97685.52  97685.52  97685.51  97685.52    0.34336
+[2025-02-07T22:00:11.537+0900] {subprocess.py:106} INFO - 2025-02-07 12:45:00  97975.50  98085.85  97868.76  97963.58  213.34435
+[2025-02-07T22:00:11.538+0900] {subprocess.py:106} INFO - 2025-02-07 13:00:00  97963.58  97990.24  97963.58  97990.24    1.35278
+[2025-02-07T22:00:11.539+0900] {subprocess.py:106} INFO - BTC_USDT_30m.csv 파일이 존재합니다. 마지막 기록 시각: 2025-02-07 12:30:00
+[2025-02-07T22:00:11.539+0900] {subprocess.py:106} INFO - 
+[2025-02-07T22:00:11.540+0900] {subprocess.py:106} INFO - === 30m 데이터 수집 시작 (시작 시각: 2025-02-07 12:30:00.001000) ===
+[2025-02-07T22:00:11.540+0900] {subprocess.py:106} INFO - [[1738933200000, 97963.58, 98000.0, 97963.58, 97999.99, 1.89932]]
+[2025-02-07T22:00:11.541+0900] {subprocess.py:106} INFO - []
+[2025-02-07T22:00:11.541+0900] {subprocess.py:106} INFO - 더 이상 반환되는 데이터가 없습니다.
+[2025-02-07T22:00:11.542+0900] {subprocess.py:106} INFO - 30m CSV 파일에 새로운 데이터가 추가되었습니다: BTC_USDT_30m.csv
+[2025-02-07T22:00:11.543+0900] {subprocess.py:106} INFO - 로드한 30m 데이터의 앞부분:
+[2025-02-07T22:00:11.543+0900] {subprocess.py:106} INFO -                          open      high       low     close   volume
+[2025-02-07T22:00:11.544+0900] {subprocess.py:106} INFO - datetime
+[2025-02-07T22:00:11.545+0900] {subprocess.py:106} INFO - 2025-02-07 12:30:00  97685.52  97685.52  97685.51  97685.52  0.35166
+[2025-02-07T22:00:11.545+0900] {subprocess.py:106} INFO - 2025-02-07 13:00:00  97963.58  98000.00  97963.58  97999.99  1.89932
+[2025-02-07T22:00:11.546+0900] {subprocess.py:106} INFO - BTC_USDT_1h.csv 파일이 존재하지 않습니다. 2025-02-07 12:45:02부터 데이터 수집을 시작합니다.
+[2025-02-07T22:00:11.546+0900] {subprocess.py:106} INFO - 
+[2025-02-07T22:00:11.547+0900] {subprocess.py:106} INFO - === 1h 데이터 수집 시작 (시작 시각: 2025-02-07 12:45:02) ===
+[2025-02-07T22:00:11.547+0900] {subprocess.py:106} INFO - [[1738933200000, 97963.58, 98007.0, 97963.58, 98006.99, 3.75758]]
+[2025-02-07T22:00:11.548+0900] {subprocess.py:106} INFO - []
+[2025-02-07T22:00:11.548+0900] {subprocess.py:106} INFO - 더 이상 반환되는 데이터가 없습니다.
+[2025-02-07T22:00:11.548+0900] {subprocess.py:106} INFO - 1h CSV 파일이 생성되었습니다: BTC_USDT_1h.csv
+[2025-02-07T22:00:11.549+0900] {subprocess.py:106} INFO - 로드한 1h 데이터의 앞부분:
+[2025-02-07T22:00:11.549+0900] {subprocess.py:106} INFO -                          open     high       low     close   volume
+[2025-02-07T22:00:11.550+0900] {subprocess.py:106} INFO - datetime
+[2025-02-07T22:00:11.550+0900] {subprocess.py:106} INFO - 2025-02-07 13:00:00  97963.58  98007.0  97963.58  98006.99  3.75758
+[2025-02-07T22:00:11.551+0900] {subprocess.py:106} INFO - BTC_USDT_4h.csv 파일이 존재하지 않습니다. 2025-02-07 12:45:02부터 데이터 수집을 시작합니다.
+[2025-02-07T22:00:11.551+0900] {subprocess.py:106} INFO - 
+[2025-02-07T22:00:11.551+0900] {subprocess.py:106} INFO - === 4h 데이터 수집 시작 (시작 시각: 2025-02-07 12:45:02) ===
+[2025-02-07T22:00:11.552+0900] {subprocess.py:106} INFO - []
+[2025-02-07T22:00:11.552+0900] {subprocess.py:106} INFO - 더 이상 반환되는 데이터가 없습니다.
+[2025-02-07T22:00:11.553+0900] {subprocess.py:106} INFO - 4h에 추가할 새로운 데이터가 없습니다. 스킵합니다.
+[2025-02-07T22:00:11.553+0900] {subprocess.py:106} INFO - BTC_USDT_1d.csv 파일이 존재하지 않습니다. 2025-02-07 12:45:02부터 데이터 수집을 시작합니다.
+[2025-02-07T22:00:11.553+0900] {subprocess.py:106} INFO - 
+[2025-02-07T22:00:11.554+0900] {subprocess.py:106} INFO - === 1d 데이터 수집 시작 (시작 시각: 2025-02-07 12:45:02) ===
+[2025-02-07T22:00:11.554+0900] {subprocess.py:106} INFO - []
+[2025-02-07T22:00:11.554+0900] {subprocess.py:106} INFO - 더 이상 반환되는 데이터가 없습니다.
+[2025-02-07T22:00:11.555+0900] {subprocess.py:106} INFO - 1d에 추가할 새로운 데이터가 없습니다. 스킵합니다.
+[2025-02-07T22:00:11.714+0900] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-02-07T22:00:11.723+0900] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-07T22:00:11.723+0900] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=run_four_python_files, task_id=run_bronze, run_id=scheduled__2025-02-07T12:45:00+00:00, execution_date=20250207T124500, start_date=20250207T130002, end_date=20250207T130011
+[2025-02-07T22:00:11.740+0900] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-07T22:00:11.749+0900] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-07T22:00:11.750+0900] {local_task_job_runner.py:245} INFO - ::endgroup::
