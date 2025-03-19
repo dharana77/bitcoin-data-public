@@ -10,7 +10,7 @@ def read_and_preprocess(csv_file, prefix):
     prefix: 각 지표 컬럼명 앞에 붙일 접두어 (예: "15m", "1h", "4h", "d").
 
     - CSV 파일을 읽어 인덱스를 datetime으로 파싱하고 정렬.
-    - RSI, SMA, BollingerBands %B, MACD 히스토그램, Elder Ray, Force Index, ROC, Price-SMA Diff 등의 기술지표를 계산.
+    - RSI, SMA, BollingerBands %B 등의 기술지표를 계산.
     - 계산된 지표 컬럼에는 prefix가 붙습니다.
 
     반환:
